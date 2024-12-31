@@ -1,348 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinith Blog</title>
-    <style>
-        /* CSS Styles */
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background: #111;
-            /* Black background */
-            color: #fff;
-            /* White text */
-            overflow-x: hidden;
-            transition: all 0.3s ease;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Year Surprise</title>
+  <style>
+    /* Global Styles */
+    body {
+      background: linear-gradient(45deg, #000000, #990000);
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
 
-        header {
-            background-image: url('https://i.ibb.co/GFdqBsn/vinith.png');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 180px 20px;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            animation: fadeIn 3s ease-in-out;
-        }
+    .container {
+      margin: 100px auto;
+      max-width: 600px;
+    }
 
-        .header-content h1 {
-            font-size: 4.5rem;
-            margin: 0;
-            line-height: 1.2;
-            animation: slideInFromLeft 2s ease-out;
-        }
+    .title {
+      font-size: 4rem;
+      font-weight: 900;
+      text-shadow: 3px 3px 10px #ff0000;
+      animation: zoomIn 2s ease-in-out;
+    }
 
-        .header-content span {
-            color: #f2ff00;
-            font-size: 4.8rem;
-            animation: bounce 2s ease infinite;
-        }
+    .subtitle {
+      font-size: 1.5rem;
+      margin: 20px 0;
+      font-weight: bold;
+    }
 
-        .header-content p {
-            font-size: 1.8rem;
-            margin-top: 20px;
-            line-height: 1.5;
-            animation: fadeIn 3s ease-in-out 1s;
-        }
+    .input-box {
+      font-size: 1.2rem;
+      padding: 15px;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 20px;
+      width: 80%;
+      text-align: center;
+    }
 
-        .navbar {
-            background: #e74c3c;
-            /* Red background */
-            padding: 20px 40px;
-            animation: fadeIn 2s ease-out;
-        }
+    .button {
+      background-color: #ff0000;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.5rem;
+      color: #fff;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.6);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-        .navbar ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
+    .button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 20px rgba(255, 0, 0, 0.8);
+    }
 
-        .navbar li {
-            margin: 0 20px;
-            position: relative;
-        }
+    .message {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin: 20px 0;
+    }
 
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.3rem;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
+    footer {
+      margin-top: 30px;
+      font-size: 1rem;
+    }
 
-        .navbar a:hover {
-            color: #f39c12;
-            /* Golden color for hover */
-            text-decoration: underline;
-        }
-
-        .navbar li::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background-color: #e74c3c;
-            bottom: 0;
-            left: 50%;
-            transition: all 0.3s ease;
-        }
-
-        .navbar li:hover::after {
-            width: 100%;
-            left: 0;
-        }
-
-        main {
-            padding: 40px;
-            font-size: 1.5rem;
-            background: #222;
-            /* Dark background */
-            color: #ddd;
-            /* Light text */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        footer {
-            background: #111;
-            /* Black footer background */
-            color: #e74c3c;
-            /* Red text */
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
-            animation: fadeIn 2s ease-out;
-        }
-
-        footer p {
-            font-size: 1.3rem;
-            margin: 0;
-        }
-
-        /* MY WORK Section */
-        #my-work {
-            padding: 40px;
-            background: #333;
-            /* Dark background */
-            text-align: center;
-        }
-
-        #my-work h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #e74c3c;
-            /* Red color */
-        }
-
-        .work-image {
-            display: inline-block;
-            margin: 10px;
-        }
-
-        .work-image img {
-            max-width: 300px;
-            height: auto;
-            border: 5px solid #e74c3c;
-            /* Red border */
-            transition: transform 0.3s ease;
-        }
-
-        .work-image:hover img {
-            transform: scale(1.05);
-        }
-
-        .work-image a {
-            color: #e74c3c;
-            /* Red color */
-            font-weight: bold;
-            font-size: 1.2rem;
-            text-decoration: none;
-        }
-
-        .work-image a:hover {
-            color: #f39c12;
-            /* Golden color on hover */
-            text-decoration: underline;
-        }
-
-        .youtube-logo a img {
-            width: 60px;
-            margin-top: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .youtube-logo a img:hover {
-            transform: scale(1.1);
-        }
-
-        .youtube-video iframe {
-            max-width: 100%;
-            height: auto;
-            margin-top: 20px;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideInFromLeft {
-            0% {
-                transform: translateX(-100%);
-            }
-
-            100% {
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes bounce {
-
-            0%,
-            100% {
-                transform: translateY(-10px);
-            }
-
-            50% {
-                transform: translateY(10px);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header-content h1 {
-                font-size: 3rem;
-            }
-
-            .header-content span {
-                font-size: 3.5rem;
-            }
-
-            .navbar ul {
-                flex-direction: column;
-                padding: 0;
-            }
-
-            .navbar li {
-                margin: 10px 0;
-            }
-
-            main {
-                padding: 20px;
-                font-size: 1.4rem;
-            }
-        }
-    </style>
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
-
 <body>
-    <header>
-        <div class="header-content">
-            <h1>HI! My name is VINITH <span>What to do ?, What not to do ?</span></h1>
-            <p>Make sure belive in Science and Technology</p>
-        </div>
-    </header>
+  <div id="homePage" class="container">
+    <h1 class="title">🎉 Surprise!! 🎉</h1>
+    <p class="subtitle">Enter your name to reveal your New Year surprise:</p>
+    <input type="text" id="userName" placeholder="Enter your name" class="input-box">
+    <button id="revealButton" class="button">Click Here to Get the Surprise</button>
+  </div>
 
-    <nav class="navbar">
-        <ul>
-            <li><a href="https://en.wikipedia.org/wiki/Tabla">Tabla</a></li>
-            <li><a href="https://www.kannadabhajans.in/Devi-Bhajan">Bajana</a></li>
-            <li><a href="https://simple.wikipedia.org/wiki/Harmonium">Harmonium</a></li>
-            <li><a href="https://en.wikipedia.org/wiki/Drum">drum</a></li>
-            <li><a href="https://en.wikipedia.org/wiki/List_of_Hindu_temples_in_India">Mandira</a></li>
-            <li><a
-                    href="https://en.wikipedia.org/w/index.php?search=neura+therapist&title=Special%3ASearch&ns0=1">Therapist</a>
-            </li>
-        </ul>
-    </nav>
+  <div id="surprisePage" class="container" style="display: none;">
+    <h1 class="title" id="welcomeMessage"></h1>
+    <img id="surpriseImage" src="" alt="Surprise Image" style="display: none;" />
+    <p id="surpriseMessage" class="message"></p>
+    <footer>Designed by Ankith and Arpith</footer>
+  </div>
 
-    <main>
-        <div class="content">
-            <h1><strong>Welcome to Vinith's Blog!</strong></h1>
-            <p><em>I am a professional thase artist, and I live in Karekadu.</em></p>
-            <p>I have a deep passion for <strong>Bjana</strong>, <strong>tabla</strong>, and <strong>Goodudeep</strong>.
-                These traditional arts are not just a part of my life but an <span
-                    style="font-weight: bold; color: #4CAF50;">expression of my soul</span>. Through the rhythms of
-                tabla and the melodic flow of Bjana, I connect with the <span
-                    style="font-weight: bold; color: #4CAF50;">roots of my culture</span>, creating music that speaks to
-                the heart and mind. Goodudeep has also been an <strong>inspiring</strong> aspect of my artistic journey,
-                bringing a unique perspective to my work. Each performance is an exploration of these <em>deep-rooted
-                    traditions</em>, and I strive to honor them in every in a very humble way <b><strong>I am a
-                        professtional neura therapist</strong></b>.</p>
-        </div>
+  <!-- Background Music -->
+  <audio id="backgroundMusic" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/12/15/audio_81ad5f4708.mp3?filename=new-year-theme-2023.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
-        <!-- MY WORK Section -->
-        <section id="my-work">
-            <h2>MY WORK</h2>
-            <div class="work-image">
-                <a href="https://ibb.co/dggm1LP">
-                    <img src="https://i.ibb.co/6BBXV1H/goodudeepa.jpg" alt="Goodudeep Image">
-                </a>
-                <br />
-                <a href='https://poetandpoem.com/Thomas-Moore' target='_blank'>Unique Goodudeepa</a>
-            </div>
+  <script>
+    document.getElementById('revealButton').addEventListener('click', () => {
+      const userName = document.getElementById('userName').value.trim();
 
-            <div class="work-image">
-                <a href="https://ibb.co/yPR237B">
-                    <img src="https://i.ibb.co/SyxSLG7/deepa.jpg" alt="Deepa Image">
-                </a>
-                <br />
-                <a href='https://poetandpoem.com/Thomas-Moore' target='_blank'>Biggest Goodudeepa in Bappanadu</a>
-            </div>
-            <div class="youtube-logo">
-                <a href="https://www.youtube.com/channel/UCf8cdL2V3i03nC1YorF7BVA" target="_blank">
-                    <img src="https://i.ibb.co/c2PqF5G/logo.png" alt="YouTube Logo">
-                </a>
-            </div>
+      if (!userName) {
+        alert('Please enter your name to proceed.');
+        return;
+      }
 
-            <!-- YouTube Video 1 -->
-            <div class="youtube-video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/1vy_kzoECuw?si=IAPy3Xpn1W4ADsTO"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
+      // Show the surprise
+      document.getElementById('homePage').style.display = 'none';
+      document.getElementById('surprisePage').style.display = 'block';
 
-            <!-- YouTube Video 2 -->
-            <div class="youtube-video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/qV7vhmRP_Rg?si=lxRz8KL7h0eJc2gN"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
+      // Update surprise content
+      const welcomeMessage = document.getElementById('welcomeMessage');
+      const surpriseMessage = document.getElementById('surpriseMessage');
+      const surpriseImage = document.getElementById('surpriseImage');
 
-            <!-- YouTube Channel Link -->
-            <div class="youtube-channel-link">
-                <a href="https://www.youtube.com/@abhishekrao4698" target="_blank">
-                    <img src="<a href=" https://imgbb.com/"><img src="https://i.ibb.co/KqhsNYF/tube.png" alt="tube"
-                        border="0"></a>"
+      welcomeMessage.innerText = `🎆 Happy New Year 2025, ${userName}! 🎆`;
+      surpriseMessage.innerText = "Best wishes for a fantastic year ahead!";
+      surpriseImage.src = "https://thehindustangazette.com/wp-content/uploads/2024/12/new-year-wishes-2025.jpg";
+      surpriseImage.style.display = "block";
 
-                Visit my YouTube Channel
-                </a>
-            </div>
+      // Play background music
+      const backgroundMusic = document.getElementById('backgroundMusic');
+      backgroundMusic.play().catch(error => {
+        console.error("Audio playback failed:", error);
+      });
 
-
-
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2024 Vinith. All rights reserved. | Designed by Ankith and Arpith</p>
-    </footer>
+      // AI Voice greeting
+      const speech = new SpeechSynthesisUtterance(`Happy New Year 2025, ${userName}! Best wishes.`);
+      speech.lang = "en-US";
+      window.speechSynthesis.speak(speech);
+    });
+  </script>
 </body>
-
 </html>
