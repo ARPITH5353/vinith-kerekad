@@ -1,142 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>New Year Surprise</title>
-  <style>
-    /* Global Styles */
-    body {
-      background: linear-gradient(45deg, #000000, #990000);
-      font-family: 'Arial', sans-serif;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .container {
-      margin: 100px auto;
-      max-width: 600px;
-    }
-
-    .title {
-      font-size: 4rem;
-      font-weight: 900;
-      text-shadow: 3px 3px 10px #ff0000;
-      animation: zoomIn 2s ease-in-out;
-    }
-
-    .subtitle {
-      font-size: 1.5rem;
-      margin: 20px 0;
-      font-weight: bold;
-    }
-
-    .input-box {
-      font-size: 1.2rem;
-      padding: 15px;
-      border-radius: 8px;
-      border: none;
-      margin-bottom: 20px;
-      width: 80%;
-      text-align: center;
-    }
-
-    .button {
-      background-color: #ff0000;
-      border: none;
-      padding: 15px 30px;
-      font-size: 1.5rem;
-      color: #fff;
-      border-radius: 10px;
-      cursor: pointer;
-      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.6);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .button:hover {
-      transform: scale(1.1);
-      box-shadow: 0 10px 20px rgba(255, 0, 0, 0.8);
-    }
-
-    .message {
-      font-size: 1.8rem;
-      font-weight: bold;
-      margin: 20px 0;
-    }
-
-    footer {
-      margin-top: 30px;
-      font-size: 1rem;
-    }
-
-    @keyframes zoomIn {
-      from {
-        transform: scale(0.8);
-        opacity: 0;
-      }
-      to {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viongame - Neon Gaming Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-  <div id="homePage" class="container">
-    <h1 class="title">🎉 Surprise!! 🎉</h1>
-    <p class="subtitle">Enter your name to reveal your New Year surprise:</p>
-    <input type="text" id="userName" placeholder="Enter your name" class="input-box">
-    <button id="revealButton" class="button">Click Here to Get the Surprise</button>
-  </div>
+    <header>
+        <div class="logo">VIONGAME</div>
+    </header>
 
-  <div id="surprisePage" class="container" style="display: none;">
-    <h1 class="title" id="welcomeMessage"></h1>
-    <img id="surpriseImage" src="" alt="Surprise Image" style="display: none;" />
-    <p id="surpriseMessage" class="message"></p>
-    <footer>Designed by Ankith and Arpith</footer>
-  </div>
+    <main>
+        <div class="games-grid">
+            <!-- Game 1: Flappy Bird -->
+            <a href="games/flappy-bird/index.html" class="game-card">
+                <div class="card-thumbnail">
+                    <i class="fas fa-dove"></i>
+                </div>
+                <div class="card-info">
+                    <h3>Flappy Bird</h3>
+                    <span class="play-btn">Play Now</span>
+                </div>
+            </a>
 
-  <!-- Background Music -->
-  <audio id="backgroundMusic" loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/12/15/audio_81ad5f4708.mp3?filename=new-year-theme-2023.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+            <!-- Game 2: Snake -->
+            <a href="games/snake/index.html" class="game-card">
+                <div class="card-thumbnail">
+                    <i class="fas fa-worm"></i>
+                </div>
+                <div class="card-info">
+                    <h3>Snake</h3>
+                    <span class="play-btn">Play Now</span>
+                </div>
+            </a>
 
-  <script>
-    document.getElementById('revealButton').addEventListener('click', () => {
-      const userName = document.getElementById('userName').value.trim();
+            <!-- Game 3: Tic Tac Toe -->
+            <a href="games/tic-tac-toe/index.html" class="game-card">
+                <div class="card-thumbnail">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="card-info">
+                    <h3>Tic Tac Toe</h3>
+                    <span class="play-btn">Play Now</span>
+                </div>
+            </a>
 
-      if (!userName) {
-        alert('Please enter your name to proceed.');
-        return;
-      }
+            <!-- Game 4: Memory Card -->
+            <a href="games/memory-card/index.html" class="game-card">
+                <div class="card-thumbnail">
+                    <i class="fas fa-th-large"></i>
+                </div>
+                <div class="card-info">
+                    <h3>Memory Match</h3>
+                    <span class="play-btn">Play Now</span>
+                </div>
+            </a>
 
-      // Show the surprise
-      document.getElementById('homePage').style.display = 'none';
-      document.getElementById('surprisePage').style.display = 'block';
+            <!-- Game 5: Car Racing -->
+            <a href="games/car-racing/index.html" class="game-card">
+                <div class="card-thumbnail">
+                    <i class="fas fa-car"></i>
+                </div>
+                <div class="card-info">
+                    <h3>Car Racing</h3>
+                    <span class="play-btn">Play Now</span>
+                </div>
+            </a>
 
-      // Update surprise content
-      const welcomeMessage = document.getElementById('welcomeMessage');
-      const surpriseMessage = document.getElementById('surpriseMessage');
-      const surpriseImage = document.getElementById('surpriseImage');
+            <!-- Game 6: Pong -->
+            <a href="games/pong/index.html" class="game-card">
+                <div class="card-thumbnail">
+                    <i class="fas fa-table-tennis"></i>
+                </div>
+                <div class="card-info">
+                    <h3>Pong</h3>
+                    <span class="play-btn">Play Now</span>
+                </div>
+            </a>
 
-      welcomeMessage.innerText = `🎆 Happy New Year 2025, ${userName}! 🎆`;
-      surpriseMessage.innerText = "Best wishes for a fantastic year ahead!";
-      surpriseImage.src = "https://thehindustangazette.com/wp-content/uploads/2024/12/new-year-wishes-2025.jpg";
-      surpriseImage.style.display = "block";
+            <!-- Game 7: Brick Breaker -->
+            <a href="games/brick-breaker/index.html" class="game-card">
+                <div class="card-thumbnail">
+                    <i class="fas fa-cubes"></i>
+                </div>
+                <div class="card-info">
+                    <h3>Brick Breaker</h3>
+                    <span class="play-btn">Play Now</span>
+                </div>
+            </a>
 
-      // Play background music
-      const backgroundMusic = document.getElementById('backgroundMusic');
-      backgroundMusic.play().catch(error => {
-        console.error("Audio playback failed:", error);
-      });
+            <!-- Game 8: 2048 -->
+            <a href="games/2048/index.html" class="game-card">
+                <div class="card-thumbnail">
+                    <i class="fas fa-border-all"></i>
+                </div>
+                <div class="card-info">
+                    <h3>2048</h3>
+                    <span class="play-btn">Play Now</span>
+                </div>
+            </a>
 
-      // AI Voice greeting
-      const speech = new SpeechSynthesisUtterance(`Happy New Year 2025, ${userName}! Best wishes.`);
-      speech.lang = "en-US";
-      window.speechSynthesis.speak(speech);
-    });
-  </script>
+            <!-- Game 9: Whack-a-Mole -->
+            <a href="games/whack-a-mole/index.html" class="game-card">
+                <div class="card-thumbnail">
+                    <i class="fas fa-gavel"></i>
+                </div>
+                <div class="card-info">
+                    <h3>Whack-a-Mole</h3>
+                    <span class="play-btn">Play Now</span>
+                </div>
+            </a>
+
+            <!-- Game 10: Jumping Dino -->
+            <a href="games/jumping-dino/index.html" class="game-card">
+                <div class="card-thumbnail">
+                    <i class="fas fa-dragon"></i>
+                </div>
+                <div class="card-info">
+                    <h3>Jumping Dino</h3>
+                    <span class="play-btn">Play Now</span>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Viongame. All rights reserved.</p>
+        <div class="social-links">
+            <!-- Add social icons if needed -->
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
